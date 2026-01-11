@@ -1,3 +1,4 @@
+require('dotenv').config();
 const BasePage = require('./BasePage');
 
 class LoginPage extends BasePage {
@@ -10,12 +11,30 @@ class LoginPage extends BasePage {
     this.errorMessage = '[data-test="error"]';
     
     this.users = {
-      standard: { username: 'standard_user', password: 'secret_sauce' },
-      locked: { username: 'locked_out_user', password: 'secret_sauce' },
-      problem: { username: 'problem_user', password: 'secret_sauce' },
-      performance: { username: 'performance_glitch_user', password: 'secret_sauce' },
-      error: { username: 'error_user', password: 'secret_sauce' },
-      visual: { username: 'visual_user', password: 'secret_sauce' }
+      standard: { 
+        username: process.env.STANDARD_USER || 'standard_user', 
+        password: process.env.PASSWORD || 'secret_sauce' 
+      },
+      locked: { 
+        username: process.env.LOCKED_USER || 'locked_out_user', 
+        password: process.env.PASSWORD || 'secret_sauce' 
+      },
+      problem: { 
+        username: process.env.PROBLEM_USER || 'problem_user', 
+        password: process.env.PASSWORD || 'secret_sauce' 
+      },
+      performance: { 
+        username: process.env.PERFORMANCE_USER || 'performance_glitch_user', 
+        password: process.env.PASSWORD || 'secret_sauce' 
+      },
+      error: { 
+        username: process.env.ERROR_USER || 'error_user', 
+        password: process.env.PASSWORD || 'secret_sauce' 
+      },
+      visual: { 
+        username: process.env.VISUAL_USER || 'visual_user', 
+        password: process.env.PASSWORD || 'secret_sauce' 
+      }
     };
   }
 

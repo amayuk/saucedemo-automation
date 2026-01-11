@@ -9,6 +9,13 @@ npm install
 npx playwright install chromium
 ```
 
+### Environment Variables
+The `.env` file should contain:
+- Base URL
+- User credentials
+- Test configuration
+
+
 ## Run Tests
 
 ```bash
